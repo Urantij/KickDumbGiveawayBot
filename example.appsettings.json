@@ -1,0 +1,22 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.Hosting.Lifetime": "Information",
+      "Microsoft.EntityFrameworkCore.Database.Command": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "Context": "Data Source=db.db"
+  },
+  "Options": {
+    "ChatRoomId": "тут рум айди",
+    "KickWsUri": "wss://ws-us2.pusher.com/app/eb1d5f283081a78b932c?protocol=7&client=js&version=7.4.0&flash=false",
+    "RandomOrgApiKey": "тут апикей рендом орга",
+    "ForceRandomOrg": true
+  },
+  "Telegram": {
+    "TelegramIds": "1234,9088",
+    "TelegramToken": "тут токен бота"
+  }
+}
