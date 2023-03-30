@@ -4,7 +4,6 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-KickDumbGiveawayBot-27c9ae22-3422-4f6f-871f-3a1d9a3c5b70</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
