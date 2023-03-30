@@ -32,6 +32,26 @@ public class ContentService
         forceRandomOrg = options.Value.ForceRandomOrg;
     }
 
+    public async Task InitAsync()
+    {
+        var giveawayModel = await _database.LoadLastGiveaway();
+        if (giveawayModel == null)
+            return;
+
+        Giveaway = new Giveaway(giveawayModel.Id, giveawayModel.CodeWord);
+        if (giveawayModel.Posters == null)
+            return;
+
+        foreach (var userModel in giveawayModel.Posters)
+        {
+            var user = Giveaway.AddUser(userModel.KickId, userModel.Username, false);
+            if (user == null)
+                continue;
+
+            user.dbId = userModel.Id;
+        }
+    }
+
     public async Task CreateNewGiveawayAsync(string codeWord)
     {
         GiveawayModel giveawayModel = new(DateTime.UtcNow, codeWord);

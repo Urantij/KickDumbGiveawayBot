@@ -23,6 +23,16 @@ public class Database
         await context.Database.MigrateAsync();
     }
 
+    public async Task<GiveawayModel?> LoadLastGiveaway()
+    {
+        using var context = await _contextFactory.CreateDbContextAsync();
+
+        return await context.Giveaways
+        .OrderByDescending(g => g.Id)
+        .Include(g => g.Posters)
+        .FirstOrDefaultAsync();
+    }
+
     public async Task AddGiveawayAsync(GiveawayModel giveaway)
     {
         using var context = await _contextFactory.CreateDbContextAsync();

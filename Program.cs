@@ -70,6 +70,7 @@ public class Program
         .Build();
 
         await host.Services.GetRequiredService<Database>().InitAsync();
+        await host.Services.GetRequiredService<ContentService>().InitAsync();
         await host.Services.GetRequiredService<KickService>().InitAsync();
         host.Services.GetRequiredService<TelegaService>().Start();
 

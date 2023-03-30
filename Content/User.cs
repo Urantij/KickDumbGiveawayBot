@@ -9,6 +9,9 @@ public class User
 {
     public int dbId = -1;
 
+    /// <summary>
+    /// KickId
+    /// </summary>
     public readonly long id;
     public readonly string name;
     public readonly bool isSpecial;
